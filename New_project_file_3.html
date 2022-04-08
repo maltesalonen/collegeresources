@@ -1,0 +1,180 @@
+<html>
+     <!-- This is page two in terms of the website -->
+     <!-- This is going to be the venn diagram that Jonah made, insert here -->
+<body style="background-color: #347235">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .vertical-menu {
+      width: 200px;
+    }
+    
+    .vertical-menu a {
+      background-color: #eee;
+      color: black;
+      display: block;
+      padding: 12px;
+      text-decoration: none;
+    }
+    
+    .vertical-menu a:hover {
+      background-color: #ccc;
+    }
+    
+    .vertical-menu a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <div class="vertical-menu">
+      <a href="Malte_Project-Copy.html" class="active">Home</a>
+      <a href="Malte_project_file_2-Copy.html">Values Quiz</a>
+      <a href="New_project_file_3.html">Venn Diagram</a>
+      <a href="New_project_file_4.html">Study Abroad</a>
+      <a href="New_project_file_5.html">Extra</a>
+    </div>
+    
+    </body>
+
+
+
+    <script src="https://api.collegeai.com/v1/api/bundle.js"></script>
+    <script type = "text/javascript" src="VennFunctions.js"></script>  
+    
+    <div class="collegeai collegeai-session-data"
+      data-api-key="551597216ed92a8469041b0f6a"
+    ></div>
+    
+    
+    
+    <head>
+        <meta charset="ÜTF-8">
+        <meta name="viewport" content=""width=device-width, initial-scale="1.0">
+        <title>CollegeVennTest</title>
+        <link rel="stylesheet" href="circle.css">
+    
+        <style>
+            h1 {text-align: center;}
+            h2 {text-align: center;}
+        </style>
+    </head>
+    
+    <body style="background-color:rgb(39, 147, 167);">
+        <br>
+        <h1>Your College Values</h1>
+        <br>
+        
+        <div class="container">
+    
+        <!-- Clear All Button-->
+          <button class="button button5"
+            onclick = "localStorage.clear(), document.location.reload();"
+            >Clear All</button>
+    
+          <div id="redcircle">
+            
+          </div>
+      
+            <!-- Buttons to create multiple combinations-->
+    
+          <div id="greencircle">
+            <button class="button button1" 
+            onclick = "buttonTwoFiltersResult(3, 4);" 
+          >AB</button>
+          </div>
+      
+          <div id="bluecircle">
+            <button class="button button2"
+            onclick = "filterChange(6, 4);"
+            >BC</button>
+    
+            <button class="button button3"
+            onclick = "filterChange(1, 1);"
+            >AC</button>
+    
+            <button class="button button4"
+            onclick = "filterChange(1,1,1);"
+            >ABC</button>
+    
+            <!--When Filter Buttons are pressed, dropdowns show list of options-->
+    
+            <div class="dropdown1">
+              <button onclick="dropDown()" class="dropbtn1">A
+              <div id="myDropdown" class="dropdown-content">
+                <a onclick = "droppedButtonIsClicked()">Specific Major</a>
+                <a onclick = "droppedButtonIsClicked()">Affordability</a>
+                <a onclick = "droppedButtonIsClicked()">In State</a>
+                <a onclick = "droppedButtonIsClicked()">Out of State</a>
+                <a onclick = "droppedButtonIsClicked()">Extra Curriculars</a>
+                <a onclick = "droppedButtonIsClicked()">Educational Rigor</a>
+                <a onclick = "droppedButtonIsClicked()">Small Class Size</a>
+                <a onclick = "droppedButtonIsClicked()">Large Class Size</a>
+    
+              </div>
+            </button>
+      
+              <div class="dropdown2">
+                <button onclick="dropDown2()" class="dropbtn2">B
+                <div id="myDropdown2" class="dropdown-content">
+                <a onclick = "droppedButtonIsClicked()">Specific Major</a>
+                <a onclick = "droppedButtonIsClicked()">Affordability</a>
+                <a onclick = "droppedButtonIsClicked()">In State</a>
+                <a onclick = "droppedButtonIsClicked()">Out of State</a>
+                <a onclick = "droppedButtonIsClicked()">Extra Curriculars</a>
+                <a onclick = "droppedButtonIsClicked()">Educational Rigor</a>
+                <a onclick = "droppedButtonIsClicked()">Small Class Size</a>
+                <a onclick = "droppedButtonIsClicked()">Large Class Size</a>
+                </div>
+              </button>
+    
+              <div class="dropdown3">
+                <button onclick="dropDown3()" class="dropbtn3">C
+                <div id="myDropdown3" class="dropdown-content">
+                <a onclick = "droppedButtonIsClicked()">Specific Major</a>
+                <a onclick = "droppedButtonIsClicked()">Affordability</a>
+                <a onclick = "droppedButtonIsClicked()">In State</a>
+                <a onclick = "droppedButtonIsClicked()">Out of State</a>
+                <a onclick = "droppedButtonIsClicked()">Extra Curriculars</a>
+                <a onclick = "droppedButtonIsClicked()">Educational Rigor</a>
+                <a onclick = "droppedButtonIsClicked()">Small Class Size</a>
+                <a onclick = "droppedButtonIsClicked()">Large Class Size</a>
+                </div>
+                </button>
+    
+          </div>
+    
+        </div>
+        <br>
+    
+        <div class="container2">
+          <!-- data question ids will present more questions based on what people want. -->
+          <h2>Recommended Colleges For You</h2>
+          <br><br>
+      
+          <div style="display: flex; flex-direction: row; flex: 1">
+            <!--<div class="collegeai-filter-view" data-disabled-filters="sat-overall,school-size,in-state,athletic-conference,activites,max-tuition" style="position:absolute; display:none;">
+            </div> -->
+            <div class="collegeai-survey"
+            data-question-ids="hot-guy-importance"
+            data-questions-per-page="1" style="display:none;"></div>
+          <div
+            class="collegeai-college-list"
+            data-hide-add-to-list="true"
+            data-show-info-table="true"
+            data-colleges-per-page="10"
+            data-show-recommended="true"
+            data-info-ids="calendar-system,acceptance_rate,average-net-cost,student-faculty-ratio,student-avg-family-income,percent-of-students-who-receive-financial-aid,offers-study-abroad,rankings-best-student-life,rankings-best-college-food,rankings-top-party-schools,rankings-hottest-guys"
+      
+          ></div>
+        </div>
+      </div>
+    
+    </body> 
+    
+    
+    
+<button style="margin-top: -100px; margin-right: 1px; margin-left:1000px;" type="button" onClick="window.location.href = 'New_project_file_4.html'">Next Page</button>
+</body>
+</html>
